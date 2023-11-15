@@ -1,0 +1,31 @@
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #f2e9fc;
+    padding: 1rem;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  nav li {
+    margin-right: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+
+
