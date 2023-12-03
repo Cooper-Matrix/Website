@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>About - KnowShare</title>
+   <link rel="stylesheet" type="text/css" href="../static/main.css"> 
+</head>
+<body>
+    
+  <header>  
+    <img src="../Images/3 copy.svg" alt="KnowShare Logo" class="logo">
+    <div id="unique-header">
+     <h2>About KnowShare</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+   
+    <section id="about">
+      <p> Welcome to KnowShare, the social media platform that's redefining the way people connect through learning. 
+        Our mission is to foster a vibrant community where sharing knowledge is not just encouraged—it's celebrated. 
+        Here, every interaction is an opportunity to learn and grow together. Discover a place where curious minds meet, experts share their insights, and learners of all levels can contribute to a collective pool of wisdom. 
+        At KnowShare, we're not just building connections; we're nurturing a global community bonded by the pursuit of knowledge. Dive into our diverse network and find out what inspires us, drives our innovation, and makes our offering unique. 
+        Join us on this journey of discovery and be a part of something bigger—a world where learning unites us all.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 KnowShare. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const aboutSection = document.getElementById('about');
+    let gradientPosition = 0;
+    let isPaused = false; 
+  
+    function moveGradient() {
+      if (!isPaused) {
+        gradientPosition += 0.5; 
+        if (gradientPosition > 100) {
+          gradientPosition = 0;
+          isPaused = true; 
+          setTimeout(() => {
+            isPaused = false; 
+            requestAnimationFrame(moveGradient); 
+          }, 4000); 
+          return; 
+        }
+        aboutSection.style.backgroundPosition = `${gradientPosition}% ${gradientPosition}%`;
+      }
+      requestAnimationFrame(moveGradient); 
+    }
+  
+    moveGradient(); 
+  </script>
+  </body>
+  </html>
+  

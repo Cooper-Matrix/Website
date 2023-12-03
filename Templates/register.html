@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>KnowShare</title>
+   <link rel="stylesheet" type="text/css" href="../static/Main.css">
+   <script>
+      // Function to check if passwords match
+      function checkPasswords() {   
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm_password').value;
+        var passwordMatchSpan = document.getElementById('passwordMatch');
+
+        if (password !== confirmPassword) {
+          passwordMatchSpan.textContent = 'Your passwords do not match';
+          return false;
+        } else {
+          passwordMatchSpan.textContent = '';
+          return true;
+        }
+      }
+   </script>
+</head>
+<body>
+    <div class="form-container1">
+	<form action="{{ url_for('process_registration') }}" method="POST" onsubmit="return checkPasswords()">
+		<h2>Sign Up</h2>
+        <div class="join-message">Join the Community!</div>
+		<p>
+			<label for="username" class="floatLabel">Username</label>
+			<input id="username" name="username" type="text" required>
+		</p>
+		<p>
+			<label for="Email" class="floatLabel">Email</label>
+			<input id="Email" name="Email" type="email" required>
+		</p>
+		<p>
+			<label for="password" class="floatLabel">Password</label>
+			<input id="password" name="password" type="password" minlength="6" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$" title="Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.">
+		</p>
+		<p>
+			<label for="confirm_password" class="floatLabel">Confirm Password</label>
+			<input id="confirm_password" name="confirm_password" type="password" minlength="6" required>
+			<span id="passwordMatch"></span>
+		</p>
+        <div class="submit-container">
+		<p>
+			<input type="submit" value="Create My Account" id="submit" onclick="location.href='home.html';">
+		</p>
+	</form>
+    </div>
+</body>
+</html>
